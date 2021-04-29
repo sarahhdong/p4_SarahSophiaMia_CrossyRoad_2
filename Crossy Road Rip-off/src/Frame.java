@@ -21,8 +21,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	
 	//2) try the same thing with the Tree class
 	Tree tree = new Tree();
-	Duck duck = new Duck();
-	Duck duck1 = new Duck();
+	Chicken duck = new Chicken();
+	Chicken duck1 = new Chicken();
 	Dog dog = new Dog();
 	
 	//create a Music object for the sound-effects (names got mixed-up)
