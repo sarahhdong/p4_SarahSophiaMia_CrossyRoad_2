@@ -11,7 +11,7 @@ public class Tree {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Tree() {
-		img = getImage("tree.png"); //load the image for Tree
+		img = getImage("crossy_road_car.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
 	}
 	
