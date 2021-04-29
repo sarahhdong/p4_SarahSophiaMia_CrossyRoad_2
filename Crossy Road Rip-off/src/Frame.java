@@ -22,8 +22,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
-	Car tree = new Car();
-	Car tree1 = new Car();
+	Car tree = new Car(0,180);
+	Car tree1 = new Car(0,100);
+	Car tree2 = new Car(0,0);
 	Chicken duck = new Chicken();
 	Chicken duck1 = new Chicken();
 	Dog dog = new Dog();
@@ -37,12 +38,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void paint(Graphics g) {
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
+		tree.paint(g);
+		tree1.paint(g);
+		tree2.paint(g);
 		duck.paint(g);
 		//duck1.paint(g);
 		dog.paint(g);
 		foreground.paint(g);
-		tree.paint(g);
-		tree1.paint(g);
+
 		
 		
 

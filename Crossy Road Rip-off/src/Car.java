@@ -11,11 +11,13 @@ public class Car {
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
-	public Car() {
+	public Car(int x, int y) {
 		img = getImage("crossy_road_car.png"); //load the image for Tree
 		init(x, y);				//initialize the location of the image
-		vx = 2;
-		vy = 2;
+		this.x = x;
+		this.y = y;
+		vx = (int)(Math.random()*(10-2+1))+2;
+		vy = vx;
 //		if(Math.random()<.5) {
 //			vx*=-1;
 //		}
