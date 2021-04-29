@@ -7,13 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Frame extends JPanel implements ActionListener, MouseListener {
+public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	private int miss;
 	//Objects that need to be drawn on the JFrame in the paint method.
 	//1) write the code to create a Ground object as one of your instance variables
@@ -129,4 +131,37 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		repaint();
 	}
 
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println(arg0.getKeyCode());
+		
+		
+		switch(arg0.getKeyCode()) {
+		//if keycode is 'd' key
+		case 68:
+			//b.moveRight();
+			break;
+			
+		case 65:
+			System.out.println("stuff for left key using a");
+			break;
+			
+		}
+		
+		
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		//b.stop();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }
