@@ -89,6 +89,19 @@ public class Chicken implements MouseListener{
 		
 		return false;
 	}
+	
+	public void jump() {
+			y-=10;
+			x+=5;
+			vx=0;
+			//vy=-1;
+		init(x,y);
+		
+	}
+	public void stop() {
+		vx=0;
+		vy = 0;
+	}
 
 	
 	private void init(double a, double b) {

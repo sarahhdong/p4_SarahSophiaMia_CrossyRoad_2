@@ -143,14 +143,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		switch(arg0.getKeyCode()) {
-		//if keycode is 'd' key
-		case 68:
-			//b.moveRight();
+		//if keycode is space bar
+		case 32:
+			duck.jump();
 			break;
 			
-		case 65:
-			System.out.println("stuff for left key using a");
-			break;
+//		case 65:
+//			System.out.println("stuff for left key using a");
+//			break;
 			
 		}
 		
@@ -161,7 +161,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		//b.stop();
+		duck.stop();
 	}
 
 	@Override
