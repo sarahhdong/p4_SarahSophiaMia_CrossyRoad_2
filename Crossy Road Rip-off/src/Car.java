@@ -24,7 +24,27 @@ public class Car {
 	public void paint(Graphics g) {
 		x += vx;
 		y += vy;
+//		reset velocity if hits bottom of frame
+		if(y>=600) {
+			x = 0;
+			y = 180;
+			init(x,y);
+
+		}
+		//if duck hits the sides of the frame, it will bounce in the opposite direction
+		if(x <= 0 || x>= 800) {
+			x = 0;
+			y = 180;
+			init(x,y);
+		}
+		//if duck hits top of frame, reinitialize behind grass
+		if(y <= 0) {
+			x = 0;
+			y = 180;
+			init(x,y);
+			}
 		tx.setToTranslation(x, y);
+		
 		
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;

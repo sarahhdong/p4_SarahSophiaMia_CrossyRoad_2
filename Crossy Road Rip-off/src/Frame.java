@@ -23,6 +23,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	//2) try the same thing with the Tree class
 	Car tree = new Car();
+	Car tree1 = new Car();
 	Chicken duck = new Chicken();
 	Chicken duck1 = new Chicken();
 	Dog dog = new Dog();
@@ -41,6 +42,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		dog.paint(g);
 		foreground.paint(g);
 		tree.paint(g);
+		tree1.paint(g);
 		
 		
 
