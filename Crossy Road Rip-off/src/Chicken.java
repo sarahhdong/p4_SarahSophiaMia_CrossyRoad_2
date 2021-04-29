@@ -17,11 +17,11 @@ public class Chicken implements MouseListener{
 	public Chicken() {
 		img = getImage("crossy_road_chicken.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
-		vx = (int)(Math.random()*(4-3+1))+2;
-		vy = -3;
-		if(Math.random()<.5) {
-			vx*=-1;
-		}
+//		vx = (int)(Math.random()*(4-3+1))+2;
+//		vy = -3;
+//		if(Math.random()<.5) {
+//			vx*=-1;
+//		}
 	}
 	
 	
@@ -31,24 +31,24 @@ public class Chicken implements MouseListener{
 		y += vy;
 		
 		//reset velocity if hits bottom of frame
-		if(y>=600) {
-			vx = (int)(Math.random()*(4-3+1))+1;
-			vy = -3;
-			if(Math.random()<.5) {
-				vx*=-1;
-			}
-
-		}
-		//if duck hits the sides of the frame, it will bounce in the opposite direction
-		if(x <= 0 || x>= 800) {
-			vx *= -1;
-		}
-		//if duck hits top of frame, reinitialize behind grass
-		if(y <= 0) {
-			x = 200;
-			y = 500;
-			init(x,y);
-			}
+//		if(y>=600) {
+//			vx = (int)(Math.random()*(4-3+1))+1;
+//			vy = -3;
+//			if(Math.random()<.5) {
+//				vx*=-1;
+//			}
+//
+//		}
+//		//if duck hits the sides of the frame, it will bounce in the opposite direction
+//		if(x <= 0 || x>= 800) {
+//			vx *= -1;
+//		}
+//		//if duck hits top of frame, reinitialize behind grass
+//		if(y <= 0) {
+//			x = 200;
+//			y = 500;
+//			init(x,y);
+//			}
 
 		//call this line of code any time there is an update to x and y
 		tx.setToTranslation(x, y); // must call this any time you update x and y;
@@ -77,8 +77,10 @@ public class Chicken implements MouseListener{
 			
 			//ducks falls
 			if(y<1000) {
+				y-=10;
+				x+=5;
 				vx=0;
-				vy=10;
+				//vy=-1;
 			}
 			init(x,y);
 
