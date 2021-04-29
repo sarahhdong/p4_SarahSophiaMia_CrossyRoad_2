@@ -8,14 +8,14 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Duck implements MouseListener{
+public class Chicken implements MouseListener{
 	private int x = 200,y = 500;
 	private int vx, vy;
 	private Image img; // image of the duck
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
-	public Duck() {
-		img = getImage("crying.png"); //load the image for Tree
+	public Chicken() {
+		img = getImage("crossy_road_chicken.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
 		vx = (int)(Math.random()*(4-3+1))+2;
 		vy = -3;
@@ -97,7 +97,7 @@ public class Duck implements MouseListener{
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = Duck.class.getResource(path);
+			URL imageURL = Chicken.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();
