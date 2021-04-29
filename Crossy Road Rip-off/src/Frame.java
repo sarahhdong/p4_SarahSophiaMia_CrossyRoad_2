@@ -22,7 +22,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
-	Tree tree = new Tree();
+	Car tree = new Car();
 	Chicken duck = new Chicken();
 	Chicken duck1 = new Chicken();
 	Dog dog = new Dog();
