@@ -55,10 +55,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	public Frame() {
 		JFrame f = new JFrame("Duck Hunt");
-		f.setSize(new Dimension(900, 600));
+		f.setSize(new Dimension(700, 700));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
+		f.addKeyListener(this);
 		f.setResizable(false);
 		
 		Timer t = new Timer(16, this);
@@ -142,7 +143,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		switch(arg0.getKeyCode()) {
 		//if keycode is space bar
 		case 32:
-			chick.jump();
+			//chick.jump();
 			break;
 			
 //		case 65:
