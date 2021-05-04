@@ -37,19 +37,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void paint(Graphics g) {
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
-p4_crossyroad_miachen
 		foreground.paint(g);
-		tree.paint(g);
-		tree1.paint(g);
-		tree2.paint(g);
-		duck.paint(g);
-		//duck1.paint(g);
 
 		car.paint(g);
 		car1.paint(g);
 		car2.paint(g);
 		chick.paint(g);
-    main
 		dog.paint(g);
 		
 
