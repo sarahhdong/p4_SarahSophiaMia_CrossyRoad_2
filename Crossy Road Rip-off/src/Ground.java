@@ -6,12 +6,12 @@ import java.awt.geom.AffineTransform;
 import java.net.URL;
 
 public class Ground {
-	private int x = 0,y = 350;
+	private int x = 0,y = 0;
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
-		img = getImage("ground.png");//load the image based on the filename "ground.png"
+		img = getImage("roads.png");//load the image based on the filename "ground.png"
 		init(x, y);					//initialize the picture location
 	}
 	

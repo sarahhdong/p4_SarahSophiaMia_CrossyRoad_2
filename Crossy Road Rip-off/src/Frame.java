@@ -38,13 +38,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void paint(Graphics g) {
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
+		foreground.paint(g);
 		tree.paint(g);
 		tree1.paint(g);
 		tree2.paint(g);
 		duck.paint(g);
 		//duck1.paint(g);
 		dog.paint(g);
-		foreground.paint(g);
+		
 
 		
 		
@@ -57,7 +58,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	public Frame() {
 		JFrame f = new JFrame("Duck Hunt");
-		f.setSize(new Dimension(900, 600));
+		f.setSize(new Dimension(700, 700));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);

@@ -6,21 +6,21 @@ import java.awt.geom.AffineTransform;
 import java.net.URL;
 
 public class Car {
-	private int x = 0,y = 180;
+	private int x, y;
 	private int vx, vy;
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Car(int x, int y) {
-		img = getImage("crossy_road_car.png"); //load the image for Tree
+		img = getImage("CarNew.png"); //load the image for Tree
 		init(x, y);				//initialize the location of the image
 		this.x = x;
 		this.y = y;
 		vx = (int)(Math.random()*(10-2+1))+2;
 		vy = vx;
-//		if(Math.random()<.5) {
-//			vx*=-1;
-//		}
+		//if(Math.random()<.5) {
+		//	vx*=-1;
+		//}
 	}
 	
 	public void paint(Graphics g) {
