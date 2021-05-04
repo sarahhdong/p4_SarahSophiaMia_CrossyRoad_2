@@ -11,6 +11,7 @@ public class Ground {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
+		//big roads
 		img = getImage("roads.png");//load the image based on the filename "ground.png"
 		init(x, y);					//initialize the picture location
 	}
@@ -19,7 +20,7 @@ public class Ground {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
-		
+		 
 	}
 	
 	
