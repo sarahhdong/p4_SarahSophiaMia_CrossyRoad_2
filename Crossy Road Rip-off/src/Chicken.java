@@ -9,7 +9,7 @@ import java.awt.geom.AffineTransform;
 import java.net.URL;
 
 public class Chicken implements MouseListener{
-	private int x = 200,y = 500;
+	private int x = 150,y = 600;
 	private int vx, vy;
 	private Image img; // image of the duck
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
@@ -29,6 +29,7 @@ public class Chicken implements MouseListener{
 
 		x += vx;
 		y += vy;
+		
 		
 		//reset velocity if hits bottom of frame
 //		if(y>=600) {
@@ -52,7 +53,7 @@ public class Chicken implements MouseListener{
 
 		//call this line of code any time there is an update to x and y
 		tx.setToTranslation(x, y); // must call this any time you update x and y;
-		
+		//tx.scale(3, 3);
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);   
@@ -77,8 +78,8 @@ public class Chicken implements MouseListener{
 			
 			//ducks falls
 			if(y<1000) {
-				y-=10;
-				x+=5;
+				y-=30;
+				x+=15;
 				vx=0;
 				//vy=-1;
 			}

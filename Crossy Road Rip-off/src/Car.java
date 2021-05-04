@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class Car {
 	private int x, y;
-	private int vx, vy;
+	private double vx, vy;
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
@@ -16,8 +16,9 @@ public class Car {
 		init(x, y);				//initialize the location of the image
 		this.x = x;
 		this.y = y;
-		vx = (int)(Math.random()*(10-2+1))+2;
-		vy = vx;
+		vx = 5;
+		//vx = (int)(Math.random()*(10-2+1))+2;
+		vy = vx-2.5;
 		//if(Math.random()<.5) {
 		//	vx*=-1;
 		//}
@@ -36,7 +37,7 @@ public class Car {
 		//if duck hits the sides of the frame, it will bounce in the opposite direction
 		if(x <= 0 || x>= 800) {
 			x = 0;
-			y = 180;
+			y = 370;
 			init(x,y);
 		}
 		//if duck hits top of frame, reinitialize behind grass
@@ -46,6 +47,7 @@ public class Car {
 			init(x,y);
 			}
 		tx.setToTranslation(x, y);
+		tx.scale(1.5, 1.5);
 		
 		
 		//these are the 2 lines of code needed draw an image on the screen
