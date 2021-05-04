@@ -22,28 +22,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
-	Car tree = new Car(0,180);
-	Car tree1 = new Car(0,100);
-	Car tree2 = new Car(0,0);
-	Chicken duck = new Chicken();
-	Chicken duck1 = new Chicken();
+	Car car = new Car(0,180);
+	Car car1 = new Car(0,100);
+	Car car2 = new Car(0,0);
+	Chicken chick = new Chicken();
 	Dog dog = new Dog();
 	
 	//create a Music object for the sound-effects (names got mixed-up)
-	Music soundBang = new Music("bang.wav", false);
-	Music soundHaha = new Music("haha.wav", false);
-	Music soundQuack = new Music("quack.wav", false);
-	Music soundThud = new Music("thud.wav", false);
-	
+	Music chirp = new Music("chirp.wav", false);
+	Music coin = new Music("coin.wav", false);
+//	Music soundQuack = new Music("chirp.wav", false);
+//	Music soundThud = new Music("coin.wav", false);
+//	
 	public void paint(Graphics g) {
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
+p4_crossyroad_miachen
 		foreground.paint(g);
 		tree.paint(g);
 		tree1.paint(g);
 		tree2.paint(g);
 		duck.paint(g);
 		//duck1.paint(g);
+
+		car.paint(g);
+		car1.paint(g);
+		car2.paint(g);
+		chick.paint(g);
+    main
 		dog.paint(g);
 		
 
@@ -62,6 +68,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
+		f.addKeyListener(this);
 		f.setResizable(false);
 		
 		Timer t = new Timer(16, this);
@@ -99,21 +106,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		soundBang.play();
+		chirp.play();
 		int x = arg0.getX();// get mouse location
 		int y = arg0.getY();
 		
 		//calls upon collided method from Duck.java
-		duck.collided(x, y);
-		duck1.collided(x, y);
+		chick.collided(x, y);
 		
 		//if mouse misses
-		if(duck.collided(x, y) == false && duck1.collided(x,y) == false) {
+		if(chick.collided(x, y) == false ){//&& duck1.collided(x,y) == false) {
 			miss++;
 			//if there are 3 misses, dog appears
 			if(miss == 3) {
 				dog.appear();
-				soundThud.play();
+				coin.play();
 				miss = 0;
 			}else {
 				dog.disappear();
@@ -146,7 +152,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		switch(arg0.getKeyCode()) {
 		//if keycode is space bar
 		case 32:
-			duck.jump();
+			//chick.jump();
 			break;
 			
 //		case 65:
@@ -162,7 +168,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		duck.stop();
+		chick.stop();
 	}
 
 	@Override
