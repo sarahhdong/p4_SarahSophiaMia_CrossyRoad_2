@@ -16,7 +16,7 @@ public class Ground {
 		
 		img = getImage("roads.png");
 		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
-		init(x, y);					//initialize the picture location
+		init(x, y);					//initialize the picture locationb
 	}
 	
 	public void paint(Graphics g) {

@@ -64,7 +64,7 @@ public class Chicken implements MouseListener{
 	Music soundQuack = new Music("quack.wav", false); //actually Quack
 	Music soundThud = new Music("thud.wav", false); //actually Haha
 	
-	//when the mouse clicks on the duck
+	//when the mouse clicks on the chicken
 	public boolean collided(int mX, int mY) {
 		System.out.println(mX+ ":"+mY);
 		System.out.println(x+ ":"+y);

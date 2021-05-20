@@ -18,7 +18,7 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	private int miss;
 	//Objects that need to be drawn on the JFrame in the paint method.
-	//1) write the code to create a Ground object as one of your instance variables
+	//1) write the code to create a Ground object as one of your instance variables welp
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
