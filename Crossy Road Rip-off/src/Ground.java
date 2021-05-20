@@ -8,18 +8,22 @@ import java.net.URL;
 public class Ground {
 	private int x = 0,y = 0;
 	private Image img; // image of the frog
+	private Image img2;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
 		//big roads
-		img = getImage("roads.png");//load the image based on the filename "ground.png"
-		init(x, y);					//initialize the picture location
+		
+		img = getImage("roads.png");
+		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
+		init(x, y);					//initialize the picture locationb
 	}
 	
 	public void paint(Graphics g) {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
+		g2.drawImage(img2, tx, null);
 		 
 	}
 	

@@ -18,13 +18,14 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	private int miss;
 	//Objects that need to be drawn on the JFrame in the paint method.
-	//1) write the code to create a Ground object as one of your instance variables
+	//1) write the code to create a Ground object as one of your instance variables welp
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
 	Car car = new Car(0,370);
-//	Car car1 = new Car(0,100);
-//	Car car2 = new Car(0,0);
+	Car car1 = new Car(0,50);
+	Car car2 = new Car(320,0);
+	Car car3 = new Car(500,0);
 	Chicken chick = new Chicken();
 	Dog dog = new Dog();
 	
@@ -40,8 +41,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		foreground.paint(g);
 
 		car.paint(g);
-//		car1.paint(g);
-//		car2.paint(g);
+		car1.paint(g);
+		car2.paint(g);
+		car3.paint(g);
 		chick.paint(g);
 		dog.paint(g);
 		

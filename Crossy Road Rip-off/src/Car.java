@@ -24,28 +24,28 @@ public class Car {
 		//}
 	}
 	
-	public void paint(Graphics g) {
+	public void paint(Graphics g) {//hope this works
 		x += vx;
 		y += vy;
-//		reset velocity if hits bottom of frame
-		if(y>=600) {
-			x = 0;
-			y = 180;
-			init(x,y);
 
-		}
-		//if duck hits the sides of the frame, it will bounce in the opposite direction
-		if(x <= 0 || x>= 800) {
-			x = 0;
-			y = 370;
-			init(x,y);
-		}
-		//if duck hits top of frame, reinitialize behind grass
-		if(y <= 0) {
-			x = 0;
-			y = 180;
-			init(x,y);
+		if(x>=800) {
+			if(y<=80) {//top car
+				x = 250;
+				y = 0;
+				init(x,y);
 			}
+			if(y>80&&y<=370) {//middle car
+				x = 0;
+				y = 50;
+				init(x,y);
+			}
+			if(y>370) {//bottom car
+				x = 0;
+				y = 370;
+				init(x,y);
+			}
+		}
+
 		tx.setToTranslation(x, y);
 		tx.scale(1.5, 1.5);
 		
