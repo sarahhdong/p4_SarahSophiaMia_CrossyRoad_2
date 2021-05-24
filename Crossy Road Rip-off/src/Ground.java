@@ -15,7 +15,9 @@ public class Ground {
 		//big roads
 		
 		img = getImage("roads.png");
-		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
+		
+		
+		
 		init(x, y);					//initialize the picture locationb
 	}
 	
@@ -23,7 +25,6 @@ public class Ground {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
-		g2.drawImage(img2, tx, null);
 		 
 	}
 	
