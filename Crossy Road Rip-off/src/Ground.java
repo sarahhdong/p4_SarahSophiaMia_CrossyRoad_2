@@ -9,6 +9,7 @@ public class Ground {
 	private int x = 0,y = 0;
 	private Image img; // image of the frog
 	private Image img2;
+	private Image img3;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
@@ -16,6 +17,7 @@ public class Ground {
 		
 		img = getImage("roads.png");
 		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
+		img3 = getImage("Tree(short).png");
 		init(x, y);					//initialize the picture locationb
 	}
 	
@@ -24,7 +26,8 @@ public class Ground {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		g2.drawImage(img2, tx, null);
-		 
+		g2.drawImage(img3, 150, 10, null);
+		g2.drawImage(img3, 500, 450, null);
 	}
 	
 	
