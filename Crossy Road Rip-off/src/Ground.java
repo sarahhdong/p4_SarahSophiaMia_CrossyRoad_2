@@ -28,6 +28,7 @@ public class Ground {
 		g2.drawImage(img2, tx, null);
 		g2.drawImage(img3, 150, 10, null);
 		g2.drawImage(img3, 500, 450, null);
+		g2.drawImage(img3, 300, 370, null);
 	}
 	
 	
