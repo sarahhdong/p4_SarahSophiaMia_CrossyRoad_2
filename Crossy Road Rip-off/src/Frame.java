@@ -14,6 +14,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.lang.Thread;
+
+
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	private int miss;
@@ -28,6 +31,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Car car3 = new Car(500,0);
 	Chicken chick = new Chicken();
 	Dog dog = new Dog();
+	LandingPage landingPage = new LandingPage();
 	
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
@@ -46,12 +50,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car3.paint(g);
 		chick.paint(g);
 		dog.paint(g);
+		landingPage.paint(g);
 		
-
 		
+		    
 		
 
 	}
+	
 	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
