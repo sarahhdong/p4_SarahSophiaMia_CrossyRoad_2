@@ -5,13 +5,13 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Car {
+public class CarRL {
 	private int x, y;
 	private double vx, vy;
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
-	public Car(int x, int y) {
+	public CarRL(int x, int y) {
 		if(Math.random() <.25) { img = getImage("CarNew.png");}
 		else if(Math.random() <.50) { img = getImage("greencar.png");}
 		else if(Math.random() <.75) { img = getImage("purplecar.png");}
@@ -20,9 +20,9 @@ public class Car {
 		init(x, y);				//initialize the location of the image
 		this.x = x;
 		this.y = y;
-		vx = 5;
+		vx = -5;
 		//vx = (int)(Math.random()*(10-2+1))+2;
-		vy = vx-2.5;
+		vy = vx+3;
 		//if(Math.random()<.5) {
 		//	vx*=-1;
 		//}
@@ -32,22 +32,22 @@ public class Car {
 		x += vx;
 		y += vy;
 
-		if(x>=800) {
-			if(y<=80) {//top car
-				x = 250;
-				y = 0;
+		if(x<=0) {
+			if(y<=400) {//BOTTOM car
+				x = 700;
+				y = 650;
 				init(x,y);
 			}
-			if(y>80&&y<=370) {//middle car
-				x = 0;
-				y = 50;
-				init(x,y);
-			}
-			if(y>370) {//bottom car
-				x = 0;
-				y = 400;
-				init(x,y);
-			}
+//			if(y>80&&y<=370) {//middle car
+//				x = 0;
+//				y = 50;
+//				init(x,y);
+//			}
+//			if(y>370) {//bottom car
+//				x = 0;
+//				y = 370;
+//				init(x,y);
+//			}
 		}
 
 		tx.setToTranslation(x, y);
@@ -68,7 +68,7 @@ public class Car {
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = Car.class.getResource(path);
+			URL imageURL = CarRL.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();
