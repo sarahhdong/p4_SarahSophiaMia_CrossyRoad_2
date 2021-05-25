@@ -25,10 +25,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Ground foreground = new Ground();
 	
 	//2) try the same thing with the Tree class
-	Car car = new Car(0,370);
-	Car car1 = new Car(0,50);
-	Car car2 = new Car(320,0);
-	Car car3 = new Car(500,0);
+	Car car = new Car(0,400);
+//	Car car1 = new Car(0,50);
+//	Car car2 = new Car(320,0);
+//	Car car3 = new Car(500,0);
+	CarRL carRL = new CarRL(700,650);
+//	CarRL carRL1 = new CarRL(700,50);
+//	CarRL carRL2 = new CarRL(700,0);
+//	CarRL carRL3 = new CarRL(700,0);
 	Chicken chick = new Chicken();
 	Dog dog = new Dog();
 	LandingPage landingPage = new LandingPage();
@@ -43,11 +47,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
 		foreground.paint(g);
-
+		carRL.paint(g);
+//		carRL1.paint(g);
+//		carRL2.paint(g);
+//		carRL3.paint(g);
 		car.paint(g);
-		car1.paint(g);
-		car2.paint(g);
-		car3.paint(g);
+//		car1.paint(g);
+//		car2.paint(g);
+//		car3.paint(g);
+
 		chick.paint(g);
 		dog.paint(g);
 		landingPage.paint(g);
