@@ -20,7 +20,6 @@ public class Ground {
 		img3 = getImage("Tree(short).png");
 		init(x, y);					//initialize the picture locationb
 	}
-	
 	public void paint(Graphics g) {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
@@ -29,6 +28,7 @@ public class Ground {
 		g2.drawImage(img3, 150, 10, null);
 		g2.drawImage(img3, 500, 450, null);
 		g2.drawImage(img3, 300, 370, null);
+		g2.drawImage(img3, 100, 300, null);
 	}
 	
 	
