@@ -35,8 +35,8 @@ public class LandingPage {
 		
 		g2.drawImage(img2, tx, null);
 		time += 17;
-		if(time > 5000) visible = false;
-		 //sdsfd
+		if(time > 30) visible = false;
+		
 	}   
 	
 	
