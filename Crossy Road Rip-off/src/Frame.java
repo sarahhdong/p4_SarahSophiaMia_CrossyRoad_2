@@ -158,10 +158,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			break;
 			//right
 		case 39:
-			chick.jump();
+			chick.right();
 			break;
-		case 34:
-			chick.jump();
+			//left
+		case 37:
+			chick.left();
 			break;
 			
 //		case 65:
