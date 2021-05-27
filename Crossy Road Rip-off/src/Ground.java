@@ -10,6 +10,7 @@ public class Ground {
 	private Image img; // image of the frog
 	private Image img2;
 	private Image img3;
+	private Image coin;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
@@ -17,9 +18,8 @@ public class Ground {
 		
 		img = getImage("roads.png");
 
-		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
 		img3 = getImage("Tree(short).png");
-
+		coin = getImage("coin.png");
 		
 		
 
@@ -35,6 +35,8 @@ public class Ground {
 		g2.drawImage(img3, 500, 450, null);
 		g2.drawImage(img3, 300, 370, null);
 		g2.drawImage(img3, 100, 300, null);
+		
+		g2.drawImage(coin, 100, 200, null);
 
 	}
 	
