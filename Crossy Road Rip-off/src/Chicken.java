@@ -30,40 +30,16 @@ public class Chicken implements MouseListener{
 		x += vx;
 		y += vy;
 		
-		
-		//reset velocity if hits bottom of frame
-//		if(y>=600) {
-//			vx = (int)(Math.random()*(4-3+1))+1;
-//			vy = -3;
-//			if(Math.random()<.5) {
-//				vx*=-1;
-//			}
-//
-//		}
-//		//if duck hits the sides of the frame, it will bounce in the opposite direction
-//		if(x <= 0 || x>= 800) {
-//			vx *= -1;
-//		}
-//		//if duck hits top of frame, reinitialize behind grass
-//		if(y <= 0) {
-//			x = 200;
-//			y = 500;
-//			init(x,y);
-//			}
 
 		//call this line of code any time there is an update to x and y
 		tx.setToTranslation(x, y); // must call this any time you update x and y;
-		//tx.scale(3, 3);
+		tx.scale(0.75, 0.75);
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);   
 		}
-	//create a Music object for the sound-effects (names got mixed-up)
-	Music soundBang = new Music("bang.wav", false); //actually Bang
-	Music soundHaha = new Music("haha.wav", false); //probaly Thud
-	Music soundQuack = new Music("quack.wav", false); //actually Quack
-	Music soundThud = new Music("thud.wav", false); //actually Haha
 	
+
 	//when the mouse clicks on the chicken
 	public boolean collided(int mX, int mY) {
 		System.out.println(mX+ ":"+mY);
@@ -74,7 +50,7 @@ public class Chicken implements MouseListener{
 		if(example.contains(mX,mY)) {
 		
 			System.out.println("ouch");
-			soundQuack.play();//plays Quack
+	
 			
 			//ducks falls
 			if(y<1000) {
