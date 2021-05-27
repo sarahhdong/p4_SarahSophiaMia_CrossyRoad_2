@@ -38,12 +38,12 @@ public class Car {
 				y = 0;
 				init(x,y);
 			}
-			if(y>80&&y<=370) {//middle car
+			if(y>100&&y<=450) {//middle car
 				x = 0;
-				y = 50;
+				y = 100;
 				init(x,y);
 			}
-			if(y>370) {//bottom car
+			if(y>500) {//bottom car
 				x = 0;
 				y = 400;
 				init(x,y);
