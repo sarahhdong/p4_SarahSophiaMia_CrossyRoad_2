@@ -33,21 +33,21 @@ public class CarRL {
 		y += vy;
 
 		if(x<=0) {
-			if(y<=400) {//BOTTOM car
+			if(y<=650&&y>=370) {//BOTTOM car
 				x = 700;
 				y = 650;
 				init(x,y);
 			}
-//			if(y>80&&y<=370) {//middle car
-//				x = 0;
-//				y = 50;
-//				init(x,y);
-//			}
-//			if(y>370) {//bottom car
-//				x = 0;
-//				y = 370;
-//				init(x,y);
-//			}
+			if(y<=350) {//middle car
+				x = 700;
+				y = 350;
+				init(x,y);
+			}
+			if(y<=150) {//top car
+				x = 700;
+				y = 150;
+				init(x,y);
+			}
 		}
 
 		tx.setToTranslation(x, y);
