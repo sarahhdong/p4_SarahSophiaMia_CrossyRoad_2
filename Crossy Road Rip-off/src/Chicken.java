@@ -75,6 +75,20 @@ public class Chicken implements MouseListener{
 		init(x,y);
 		
 	}
+	public void left() {
+		x-=5;
+		vx=0;
+		//vy=-1;
+	init(x,y);
+	
+}
+	public void right() {
+		x+=5;
+		vx=0;
+		//vy=-1;
+	init(x,y);
+	
+}
 	public void stop() {
 		vx=0;
 		vy = 0;
