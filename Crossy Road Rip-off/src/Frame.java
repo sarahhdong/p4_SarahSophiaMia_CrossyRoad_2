@@ -151,9 +151,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		switch(arg0.getKeyCode()) {
-		//if keycode is space bar
-		case 32:
-			//chick.jump();
+		
+			//forward
+		case 38:
+			chick.jump();
+			break;
+			//right
+		case 39:
+			chick.jump();
+			break;
+		case 34:
+			chick.jump();
 			break;
 			
 //		case 65:
