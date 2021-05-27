@@ -34,15 +34,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 //	CarRL carRL2 = new CarRL(700,0);
 //	CarRL carRL3 = new CarRL(700,0);
 	Chicken chick = new Chicken();
-	Dog dog = new Dog();
 	LandingPage landingPage = new LandingPage();
 	
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
-//	Music soundQuack = new Music("chirp.wav", false);
-//	Music soundThud = new Music("coin.wav", false);
-//	
+
 	public void paint(Graphics g) {
 		//invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); //makes sure to refresh the jFrame properly
@@ -57,7 +54,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 //		car3.paint(g);
 
 		chick.paint(g);
-		dog.paint(g);
 		landingPage.paint(g);
 		
 		
@@ -127,17 +123,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			miss++;
 			//if there are 3 misses, dog appears
 			if(miss == 3) {
-				dog.appear();
 				coin.play();
 				miss = 0;
-			}else {
-				dog.disappear();
-			}
 		}
 		else {
 			miss =0;
 		}
-
+		}
 	}
 
 	@Override
