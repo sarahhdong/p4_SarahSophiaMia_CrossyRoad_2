@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
@@ -8,7 +9,7 @@ import java.net.URL;
 public class Car {
 	private int x, y;
 	private double vx, vy;
-	private Image img; // image of the frog
+	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Car(int x, int y) {
@@ -17,15 +18,11 @@ public class Car {
 		else if(Math.random() <.75) { img = getImage("purplecar.png");}
 		else {img = getImage("redcar.png");}
 		
-		init(x, y);				//initialize the location of the image
+		init(x, y);
 		this.x = x;
 		this.y = y;
 		vx = 5;
-		//vx = (int)(Math.random()*(10-2+1))+2;
 		vy = vx-2.5;
-		//if(Math.random()<.5) {
-		//	vx*=-1;
-		//}
 	}
 	
 	public void paint(Graphics g) {//hope this works
@@ -57,6 +54,22 @@ public class Car {
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);   
+		
+	}
+	
+	public boolean collide(Chicken c) {
+//		Rectangle r1 = new Rectangle(x,y,width,width);
+//		
+//		//represent the paddle as a rectangle
+//		Rectangle r2 = new Rectangle(c.getX(),c.getY(), c.getWidth(), c.getHeight());
+		
+//		if(r1.intersects(r2)) {
+//			vx = 0;
+		//or stop timer if want to reset chicken to starting position
+		//boolean in main frame to see if dead, then reset chicken and reset timer
+//		}
+		return true;
+		//main frame: every single car, ask if colliding with chicken
 		
 	}
 	
