@@ -9,27 +9,23 @@ import java.net.URL;
 public class CarRL {
 	private int x, y;
 	private double vx, vy;
-	private Image img; // image of the frog
+	private Image img; 
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public CarRL(int x, int y) {
-		if(Math.random() <.25) { img = getImage("CarNew.png");}
-		else if(Math.random() <.50) { img = getImage("greencar.png");}
-		else if(Math.random() <.75) { img = getImage("purplecar.png");}
-		else {img = getImage("redcar.png");}
+		if(Math.random() <.25) { img = getImage("YellowBackwardCar.png");}
+		else if(Math.random() <.50) { img = getImage("GreenBackwardCar.png");}
+		else if(Math.random() <.75) { img = getImage("PurpleBackwardCar.png");}
+		else {img = getImage("RedBackwardCar.png");}
 		
-		init(x, y);				//initialize the location of the image
+		init(x, y);	
 		this.x = x;
 		this.y = y;
 		vx = -5;
-		//vx = (int)(Math.random()*(10-2+1))+2;
 		vy = vx+3;
-		//if(Math.random()<.5) {
-		//	vx*=-1;
-		//}
 	}
 	
-	public void paint(Graphics g) {//hope this works
+	public void paint(Graphics g) {
 		x += vx;
 		y += vy;
 
@@ -52,7 +48,6 @@ public class CarRL {
 		}
 
 		tx.setToTranslation(x, y);
-		//tx.scale(1.5, 1.5);
 		tx.scale(.75, .75);
 		
 		//these are the 2 lines of code needed draw an image on the screen

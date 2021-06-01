@@ -9,7 +9,7 @@ import java.net.URL;
 public class Car {
 	private int x, y;
 	private double vx, vy;
-	private Image img; // image of the frog
+	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Car(int x, int y) {
@@ -18,15 +18,11 @@ public class Car {
 		else if(Math.random() <.75) { img = getImage("purplecar.png");}
 		else {img = getImage("redcar.png");}
 		
-		init(x, y);				//initialize the location of the image
+		init(x, y);
 		this.x = x;
 		this.y = y;
 		vx = 5;
-		//vx = (int)(Math.random()*(10-2+1))+2;
 		vy = vx-2.5;
-		//if(Math.random()<.5) {
-		//	vx*=-1;
-		//}
 	}
 	
 	public void paint(Graphics g) {//hope this works
