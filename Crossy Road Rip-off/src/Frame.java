@@ -90,10 +90,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		//figure out how to get the date to the object that needs it
 		
-		//what if we represent the mouse as a rectangle?
-		//Rectangle m = new Rectangle(arg0.getX(), arg0.getY(), 50,50);
 	}
 
 	@Override
@@ -155,23 +152,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//forward
 		case 38:
 			chick.jump();
+			chirp.play();
 			break;
+			
 			//right
 		case 39:
 			chick.right();
 			break;
+			
 			//left
 		case 37:
 			chick.left();
 			break;
-			
-//		case 65:
-//			System.out.println("stuff for left key using a");
-//			break;
-			
 		}
-		
-		
 		
 	}
 
