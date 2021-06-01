@@ -37,7 +37,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	LandingPage landingPage = new LandingPage();
 	
 	Coin c = new Coin(300,300);
-
+	Coin c2 = new Coin(300,400);
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
@@ -53,10 +53,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car.paint(g);
 		car1.paint(g);
 		car2.paint(g);
-//		car3.paint(g);
 		
 		c.paint(g);
-		
+		c2.paint(g);
 		chick.paint(g);
 		landingPage.paint(g);
 		
@@ -94,7 +93,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void update() {
 		//ask the ball to check for collisions
 		chick.CoinCollide(c);
- 
+		chick.CoinCollide(c2);
 	}
 	
 	/*scale pictures
