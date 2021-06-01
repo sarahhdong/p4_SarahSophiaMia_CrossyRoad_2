@@ -36,6 +36,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Chicken chick = new Chicken();
 	LandingPage landingPage = new LandingPage();
 	
+	Coin c = new Coin(300,300);
+
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
@@ -52,9 +54,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car1.paint(g);
 		car2.paint(g);
 //		car3.paint(g);
-
+		
+		c.paint(g);
+		
 		chick.paint(g);
 		landingPage.paint(g);
+		
+		
+
 		
 		
 		    
@@ -81,6 +88,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		t.start();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
+	}
+	
+
+	public void update() {
+		//ask the ball to check for collisions
+		chick.CoinCollide(c);
+ 
 	}
 	
 	/*scale pictures
@@ -127,6 +141,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			miss =0;
 		}
 		}
+		
+		update();
 	}
 
 	@Override
@@ -165,6 +181,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			chick.left();
 			break;
 		}
+		
+		update();
 		
 	}
 

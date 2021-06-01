@@ -44,7 +44,7 @@ public class Ground {
 
 	}
 	
-	
+
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(1, 1);

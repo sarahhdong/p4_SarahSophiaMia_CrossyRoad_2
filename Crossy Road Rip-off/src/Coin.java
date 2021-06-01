@@ -14,10 +14,14 @@ public class Coin {
 		private double vx, vy;
 		private Image img; // image of the frog
 		private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
-
-		public Coin() {
+		
+		Music coin = new Music("coin.wav", false);
+		
+		public Coin(int setX, int setY) {
 			img = getImage("coin.png");
-			init(x, y);				//initialize the location of the image
+			x = setX;
+			y = setY;
+			//initialize the location of the image
 			//this.x = x;
 			//this.y = y;
 			//vx = -5;
@@ -64,6 +68,32 @@ public class Coin {
 			}
 			return tempImage;
 		}
+		
+		public void Collided() {
+			coin.play();
+			x = 1000;
+			y = 1000;
+		}
+		
+		public int getY() {
+			// TODO Auto-generated method stub
+			return y;
+		}
+
+
+		public int getX() {
+			// TODO Auto-generated method stub
+			return x;
+		}
+		
+		public void setX(int newX) {
+			this.x = newX;
+		}
+		public void setY(int newY) {
+			this.y = newY;
+		}
+		
+		
 		
 
 	
