@@ -77,6 +77,7 @@ public class Chicken implements MouseListener{
 	}
 	public void left() {
 		x-=5;
+		y-=2;
 		vx=0;
 		//vy=-1;
 	init(x,y);
@@ -84,6 +85,7 @@ public class Chicken implements MouseListener{
 }
 	public void right() {
 		x+=5;
+		y+=2;
 		vx=0;
 		//vy=-1;
 	init(x,y);
