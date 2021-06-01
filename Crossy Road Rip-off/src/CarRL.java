@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
@@ -57,6 +58,18 @@ public class CarRL {
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);   
+		
+	}
+	
+	public void collide(Chicken c) {
+//		Rectangle r1 = new Rectangle(x,y,width,width);
+//		
+//		//represent the paddle as a rectangle
+//		Rectangle r2 = new Rectangle(c.getX(),c.getY(), c.getWidth(), c.getHeight());
+//		
+//		if(r1.intersects(r2)) {
+//			vx = 0;
+//		}
 		
 	}
 	
