@@ -17,11 +17,6 @@ public class Chicken implements MouseListener{
 	public Chicken() {
 		img = getImage("crossy_road_chicken.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
-//		vx = (int)(Math.random()*(4-3+1))+2;
-//		vy = -3;
-//		if(Math.random()<.5) {
-//			vx*=-1;
-//		}
 	}
 	
 	
@@ -77,16 +72,16 @@ public class Chicken implements MouseListener{
 		
 	}
 	public void left() {
-		x-=5;
-		y-=2;
+		x-=20;
+		y-=8;
 		vx=0;
 		//vy=-1;
 	init(x,y);
 	
 }
 	public void right() {
-		x+=5;
-		y+=2;
+		x+=20;
+		y+=8;
 		vx=0;
 		//vy=-1;
 	init(x,y);
