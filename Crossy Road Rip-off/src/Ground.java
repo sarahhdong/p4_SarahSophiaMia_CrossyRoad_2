@@ -37,6 +37,10 @@ public class Ground {
 		g2.drawImage(img3, 100, 300, null);
 		
 		g2.drawImage(coin, 100, 200, null);
+		g2.drawImage(coin, 200, 300, null);
+		g2.drawImage(coin, 250, 550, null);
+		g2.drawImage(coin, 550, 200, null);
+		g2.drawImage(coin, 330, 15, null);
 
 	}
 	

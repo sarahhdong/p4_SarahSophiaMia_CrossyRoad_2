@@ -68,10 +68,11 @@ public class Chicken implements MouseListener{
 	}
 	
 	public void jump() {
-			y-=10;
-			x+=5;
+			y-=24;
+			x+=14;
 			vx=0;
-			//vy=-1;
+			
+			
 		init(x,y);
 		
 	}
