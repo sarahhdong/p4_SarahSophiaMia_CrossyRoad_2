@@ -16,7 +16,7 @@ public class Ground {
 	public Ground() {
 		//big roads
 		
-		img = getImage("roads.png");
+		img = getImage("evenRoads.png");
 
 		img3 = getImage("Tree(short).png");
 		coin = getImage("coin.png");
