@@ -61,8 +61,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 
 	}
-	
-	
+	public void update() {
+		
+		//ask the ball to check for collisions
+		car.carCollide(chick);
+		car1.carCollide(chick);
+		car2.carCollide(chick);
+		carRL.car2Collide(chick);
+		carRL1.car2Collide(chick);
+		carRL2.car2Collide(chick);
+		carRL3.car2Collide(chick);
+		//b.isColliding(left);
+ 
+ 
+ 
+	}
+
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 	}
@@ -139,6 +153,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		repaint();
+		update();
 	}
 
 	@Override
