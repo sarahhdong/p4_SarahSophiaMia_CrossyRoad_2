@@ -142,7 +142,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.TallTreeCollide(tt1);
 		chick.TallTreeCollide(tt2);
 		chick.TallTreeCollide(tt3);
-		
+		 
 		car.carCrash(car1);
         car1.carCrash(car);
         car2.carCrash(car);

@@ -31,7 +31,7 @@ public class Ground {
 		g2.drawImage(img, tx, null);
 
 		
-
+ 
 
 	}
 	

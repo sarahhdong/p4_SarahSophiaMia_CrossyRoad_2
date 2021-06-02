@@ -47,7 +47,7 @@ public class Tree {
 		g2.drawImage(img, tx, null);   
 		
 	
-		
+		 
 	}
 	
 

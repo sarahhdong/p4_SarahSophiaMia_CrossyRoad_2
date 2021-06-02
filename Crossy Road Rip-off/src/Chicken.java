@@ -103,7 +103,7 @@ public class Chicken implements MouseListener{
 			System.out.println("tree");
 		}
 	}
-	
+	 
 public void TallTreeCollide(TallTree t) {
 		
 		//represent the 2 objects as Rectangles and check for intersection

@@ -65,7 +65,7 @@ public class CarRL {
 		
 		//Represent Coin as a rectangle
 		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
-		
+		 
 		if(r1.intersects(r2)) {
 			vx=0;
 			vy=0;

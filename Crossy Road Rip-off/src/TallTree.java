@@ -20,7 +20,7 @@ public class TallTree {
 		
 		//x = setX;
 		//y = setY;
-		
+		 
 	}
 	
 	public void paint(Graphics g) {//hope this works
