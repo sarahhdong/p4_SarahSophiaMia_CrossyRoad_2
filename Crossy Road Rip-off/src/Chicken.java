@@ -24,7 +24,21 @@ public class Chicken implements MouseListener{
 
 		x += vx;
 		y += vy;
-		
+		if(y<0) {
+			x=150;
+			y=600;
+			init(x, y); 
+		}
+		if(x>650) {
+			vx=0;
+			x=650;
+			init(x, y); 
+		}
+		if(x<0) {
+			vx=0;
+			x=0;
+			init(x, y); 
+		}
 
 		//call this line of code any time there is an update to x and y
 		tx.setToTranslation(x, y); // must call this any time you update x and y;
@@ -34,62 +48,30 @@ public class Chicken implements MouseListener{
 		g2.drawImage(img, tx, null);   
 		}
 	
-
-	//when the mouse clicks on the chicken
-	public boolean collided(int mX, int mY) {
-		System.out.println(mX+ ":"+mY);
-		System.out.println(x+ ":"+y);
-		Rectangle example = new Rectangle(x,y,150,150);
-		
-		//mouse clicks on duck
-		if(example.contains(mX,mY)) {
-		
-			System.out.println("ouch");
-	
-			
-			//ducks falls
-			if(y<1000) {
-				y-=30;
-				x+=15;
-				vx=0;
-				//vy=-1;
-			}
-			init(x,y);
-
-			return true;
-		}
-		
-		return false;
-	}
-	
 	public void jump() {
 			y-=36;
 			x+=20;
 			vx=0;
-			
-			
-		init(x,y);
+			init(x,y);
 		
 	}
 	public void left() {
 		x-=20;
 		y-=8;
 		vx=0;
-		//vy=-1;
-	init(x,y);
+		init(x,y);
 	
 }
 	public void right() {
 		x+=20;
 		y+=8;
 		vx=0;
-		//vy=-1;
-	init(x,y);
+		init(x,y);
 	
 }
 	public void stop() {
 		vx=0;
-		vy = 0;
+		vy=0;
 	}
 	
 	private void init(double a, double b) {
@@ -107,7 +89,19 @@ public class Chicken implements MouseListener{
 		}
 		return tempImage;
 	}
-	
+//	public void TreeCollide(Tree t) {
+//		
+//		//represent the 2 objects as Rectangles and check for intersection
+//		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+//		
+//		//Represent Coin as a rectangle
+//		Rectangle r2 = new Rectangle(t.getX()+10, t.getY()+10, 30, 30);
+//		
+//		if(r1.intersects(r2)) {
+//			t.collided();
+//			System.out.println("car");
+//		}
+//	}
 	public void CoinCollide(Coin c) {
 		
 		//represent the 2 objects as Rectangles and check for intersection
@@ -131,6 +125,8 @@ public class Chicken implements MouseListener{
 		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
 		
 		if(r1.intersects(r2)) {
+			x=150;
+			y=600;
 			c.collided();
 			System.out.println("car");
 		}
@@ -144,6 +140,8 @@ public class Chicken implements MouseListener{
 			Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
 			
 			if(r1.intersects(r2)) {
+				x=150;
+				y=600;
 				c.collided();
 				System.out.println("car");
 			}
