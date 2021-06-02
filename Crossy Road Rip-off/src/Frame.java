@@ -147,27 +147,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		chirp.play();
-		int x = arg0.getX();// get mouse location
-		int y = arg0.getY();
-		
-		//calls upon collided method from Duck.java
-		chick.collided(x, y);
-		
-		//if mouse misses
-		if(chick.collided(x, y) == false ){//&& duck1.collided(x,y) == false) {
-			miss++;
-			//if there are 3 misses, dog appears
-			if(miss == 3) {
-				coin.play();
-				miss = 0;
-		}
-		else {
-			miss =0;
-		}
-		}
-		
-		update();
 	}
 
 	@Override
