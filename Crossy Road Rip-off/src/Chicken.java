@@ -89,19 +89,36 @@ public class Chicken implements MouseListener{
 		}
 		return tempImage;
 	}
-//	public void TreeCollide(Tree t) {
-//		
-//		//represent the 2 objects as Rectangles and check for intersection
-//		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
-//		
-//		//Represent Coin as a rectangle
-//		Rectangle r2 = new Rectangle(t.getX()+10, t.getY()+10, 30, 30);
-//		
-//		if(r1.intersects(r2)) {
-//			t.collided();
-//			System.out.println("car");
-//		}
-//	}
+	public void TreeCollide(Tree t) {
+		
+		//represent the 2 objects as Rectangles and check for intersection
+		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 40);
+		
+		//Represent Coin as a rectangle
+		Rectangle r2 = new Rectangle(t.getX()+10, t.getY()+10, 30, 40);
+		
+		if(r1.intersects(r2)) {
+			x=150;
+			y=600;
+			System.out.println("tree");
+		}
+	}
+	
+public void TallTreeCollide(TallTree t) {
+		
+		//represent the 2 objects as Rectangles and check for intersection
+		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 40);
+		
+		//Represent Coin as a rectangle
+		Rectangle r2 = new Rectangle(t.getX()+10, t.getY()+10, 30, 40);
+		
+		if(r1.intersects(r2)) {
+			x=150;
+			y=600;
+			System.out.println("tall tree");
+		}
+	}
+	
 	public void CoinCollide(Coin c) {
 		
 		//represent the 2 objects as Rectangles and check for intersection

@@ -70,7 +70,7 @@ public class CarRL {
 			vx=0;
 			vy=0;
 			c.collided();
-			System.out.println("crash2");
+			//System.out.println("crash2");
 		}
 	}
 	public int getY() {
