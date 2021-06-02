@@ -46,6 +46,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Coin c6 = new Coin();
 	Coin c7 = new Coin();
 	Coin c8 = new Coin();
+	
+	Tree t1 = new Tree(150, 10);
+	Tree t2 = new Tree(500,450);
+	Tree t3 = new Tree(300,370);
+	Tree t4 = new Tree(100,300);
+	
+	TallTree tt1 = new TallTree (500,350);
+	TallTree tt2 = new TallTree (350,100);
+	TallTree tt3 = new TallTree (70,500);
+	
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
@@ -70,14 +80,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		c7.paint(g);
 		c8.paint(g);
 		chick.paint(g);
+		
+		t1.paint(g);
+		t2.paint(g);
+		t3.paint(g);
+		t4.paint(g);
+		
+		tt1.paint(g);
+		tt2.paint(g);
+		tt3.paint(g);
+			    
+		
 		landingPage.paint(g);
-		
-		
-
-		
-		
-		    
-		
 
 	}
 
@@ -119,6 +133,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CarCollide(carRL1);
 		chick.CarCollide(carRL2);
 		chick.CarCollide(carRL3);
+		
+		chick.TreeCollide(t1);
+		chick.TreeCollide(t2);
+		chick.TreeCollide(t3);
+		chick.TreeCollide(t4);
+		
+		chick.TallTreeCollide(tt1);
+		chick.TallTreeCollide(tt2);
+		chick.TallTreeCollide(tt3);
+		 
+		car.carCrash(car1);
+        car1.carCrash(car);
+        car2.carCrash(car);
+        car.carCrash(car2);
+        car1.carCrash(car2);
+        car2.carCrash(car1);
+        carRL.carCrash2(carRL1);
+        carRL.carCrash2(carRL2);
+        carRL.carCrash2(carRL3);
+        carRL1.carCrash2(carRL);
+        carRL2.carCrash2(carRL);
+        carRL3.carCrash2(carRL);
+        carRL1.carCrash2(carRL2);
+        carRL1.carCrash2(carRL3);
+        carRL2.carCrash2(carRL1);
+        carRL3.carCrash2(carRL1);
+        carRL2.carCrash2(carRL3);
+        carRL3.carCrash2(carRL2);
 
 	}
 	
