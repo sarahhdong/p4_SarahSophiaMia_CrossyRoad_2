@@ -92,7 +92,6 @@ public class Chicken implements MouseListener{
 		vy = 0;
 	}
 	
-	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(1, 1);
@@ -121,6 +120,34 @@ public class Chicken implements MouseListener{
 			c.Collided();
 			System.out.println("hi");
 		}
+			
+	}
+	public void CarCollide(Car c) {
+		
+		//represent the 2 objects as Rectangles and check for intersection
+		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+		
+		//Represent Coin as a rectangle
+		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
+		
+		if(r1.intersects(r2)) {
+			c.collided();
+			System.out.println("car");
+		}
+	}
+		public void CarCollide(CarRL c) {
+			
+			//represent the 2 objects as Rectangles and check for intersection
+			Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+			
+			//Represent Coin as a rectangle
+			Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
+			
+			if(r1.intersects(r2)) {
+				c.collided();
+				System.out.println("car");
+			}
+				
 			
 	}
 	
