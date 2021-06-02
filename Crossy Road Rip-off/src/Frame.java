@@ -93,6 +93,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//ask the ball to check for collisions
 		chick.CoinCollide(c);
 		chick.CoinCollide(c2);
+		chick.CarCollide(car);
+		chick.CarCollide(car1);
+		chick.CarCollide(car2);
+		chick.CarCollide(carRL);
+		chick.CarCollide(carRL1);
+		chick.CarCollide(carRL2);
+		chick.CarCollide(carRL3);
+
 	}
 	
 	/*scale pictures

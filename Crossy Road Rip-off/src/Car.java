@@ -57,23 +57,27 @@ public class Car {
 		
 	}
 	
-	public boolean carCollide(Chicken c) {
-		Rectangle car = new Rectangle(x,y,50,20);
-//		
-//		//represent the paddle as a rectangle
-		Rectangle chick = new Rectangle(c.getX(),c.getY(), 28, 38);
-		
-		if(car.intersects(chick)) {
-			vx = 0;
-			System.out.println("This works");
-		//or stop timer if want to reset chicken to starting position
-		//boolean in main frame to see if dead, then reset chicken and reset timer
-//		}
-		return true;
-		}
-		//main frame: every single car, ask if colliding with chicken
-		return false;
-		
+	public void collided() {
+		vx=0;
+		vy=0;
+	}
+	
+	public int getY() {
+		// TODO Auto-generated method stub
+		return y;
+	}
+
+
+	public int getX() {
+		// TODO Auto-generated method stub
+		return x;
+	}
+	
+	public void setX(int newX) {
+		this.x = newX;
+	}
+	public void setY(int newY) {
+		this.y = newY;
 	}
 	
 	private void init(double a, double b) {
