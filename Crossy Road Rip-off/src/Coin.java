@@ -17,10 +17,10 @@ public class Coin {
 		
 		Music coin = new Music("coin.wav", false);
 		
-		public Coin(int setX, int setY) {
-			img = getImage("coin.png");
-			x = setX;
-			y = setY;
+		public Coin() {
+			img = getImage("newCoin.png");
+			x = (int)(Math.random() * 680)+10;
+			y = (int)(Math.random() * 680)+10;
 			//initialize the location of the image
 			//this.x = x;
 			//this.y = y;

@@ -36,8 +36,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Chicken chick = new Chicken();
 	LandingPage landingPage = new LandingPage();
 	
-	Coin c = new Coin(300,300);
-	Coin c2 = new Coin(300,400);
+	
+
+	Coin c1 = new Coin();
+	Coin c2 = new Coin();
+	Coin c3 = new Coin();
+	Coin c4 = new Coin();
+	Coin c5 = new Coin();
+	Coin c6 = new Coin();
+	Coin c7 = new Coin();
+	Coin c8 = new Coin();
 	//create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
@@ -53,9 +61,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car.paint(g);
 		car1.paint(g);
 		car2.paint(g);
-		
-		c.paint(g);
+		c1.paint(g);
 		c2.paint(g);
+		c3.paint(g);
+		c4.paint(g);
+		c5.paint(g);
+		c6.paint(g);
+		c7.paint(g);
+		c8.paint(g);
 		chick.paint(g);
 		landingPage.paint(g);
 		
@@ -91,8 +104,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 	public void update() {
 		//ask the ball to check for collisions
-		chick.CoinCollide(c);
+		chick.CoinCollide(c1);
 		chick.CoinCollide(c2);
+		chick.CoinCollide(c3);
+		chick.CoinCollide(c4);
+		chick.CoinCollide(c5);
+		chick.CoinCollide(c6);
+		chick.CoinCollide(c7);
+		chick.CoinCollide(c8);
 		chick.CarCollide(car);
 		chick.CarCollide(car1);
 		chick.CarCollide(car2);

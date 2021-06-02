@@ -111,10 +111,10 @@ public class Chicken implements MouseListener{
 	public void CoinCollide(Coin c) {
 		
 		//represent the 2 objects as Rectangles and check for intersection
-		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+		Rectangle r1 = new Rectangle(this.x+20, this.y+25, 30, 40);
 		
 		//Represent Coin as a rectangle
-		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
+		Rectangle r2 = new Rectangle(c.getX(), c.getY(), 20, 20);
 		
 		if(r1.intersects(r2)) {
 			c.Collided();
