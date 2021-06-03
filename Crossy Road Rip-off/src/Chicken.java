@@ -13,7 +13,7 @@ public class Chicken implements MouseListener{
 	private int vx, vy;
 	private Image img; // image of the duck
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
-
+	int collect = 0;
 	public Chicken() {
 		img = getImage("crossy_road_chicken.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
@@ -120,7 +120,7 @@ public void TallTreeCollide(TallTree t) {
 	}
 	
 	public void CoinCollide(Coin c) {
-		
+
 		//represent the 2 objects as Rectangles and check for intersection
 		Rectangle r1 = new Rectangle(this.x+20, this.y+25, 30, 40);
 		
@@ -130,6 +130,7 @@ public void TallTreeCollide(TallTree t) {
 		if(r1.intersects(r2)) {
 			c.Collided();
 			System.out.println("hi");
+			collect++;
 		}
 			
 	}
@@ -200,6 +201,10 @@ public void TallTreeCollide(TallTree t) {
 	public int getY() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	public int getCollect() {
+		// TODO Auto-generated method stub
+		return collect;
 	}
 
 

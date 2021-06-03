@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -23,6 +24,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//Objects that need to be drawn on the JFrame in the paint method.
 	//1) write the code to create a Ground object as one of your instance variables welp
 	Ground foreground = new Ground();
+	
+	int blah = 0;
 	
 	//2) try the same thing with the Tree class
 	Car car = new Car(0,400);
@@ -89,7 +92,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		tt1.paint(g);
 		tt2.paint(g);
 		tt3.paint(g);
-			    
+		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 20);
+		g.setFont(font);
+		g.setColor(Color.white);
+
+		g.drawString(chick.getCollect()+"",650, 30);	    
 		
 		landingPage.paint(g);
 
