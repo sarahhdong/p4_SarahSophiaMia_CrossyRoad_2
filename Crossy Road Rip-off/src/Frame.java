@@ -196,6 +196,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		
+		int x= arg0.getX();
+		int y = arg0.getY();
+		
+		
 	}
 
 	@Override
@@ -233,7 +238,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		case 37:
 			chick.left();
 			break;
+			
+			
+			//final page button (space bar)
+		case 32:
+			//code to make final page go away
 		}
+	
+			
 		
 		update();
 		
