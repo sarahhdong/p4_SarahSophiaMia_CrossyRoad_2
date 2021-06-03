@@ -29,9 +29,10 @@ public class Car {
 		x += vx;
 		y += vy;
 
+
 		if(x>=800) {
-			if(y<=80) {//top car
-				x = 250;
+			if(y<=200) {//top car
+				x = 320;
 				y = 0;
 				init(x,y);
 			}
