@@ -222,7 +222,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//forward
 		case 38:
 			chick.jump();
-			chirp.play();
 			break;
 			
 			//right

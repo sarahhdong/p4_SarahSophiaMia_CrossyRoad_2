@@ -14,6 +14,8 @@ public class Chicken implements MouseListener{
 	private Image img; // image of the duck
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	int collect = 0;
+	int count = 0;
+	Music chirp = new Music("chirp.wav", false);
 	public Chicken() {
 		img = getImage("crossy_road_chicken.png"); //load the image for Tree
 		init(x, y); 				//initialize the location of the image
@@ -52,6 +54,11 @@ public class Chicken implements MouseListener{
 			y-=36;
 			x+=20;
 			vx=0;
+			if(count%3 ==0) {
+				chirp.play();
+			}
+			count++;
+
 			init(x,y);
 		
 	}
