@@ -15,6 +15,9 @@ public class Chicken implements MouseListener{
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	int collect = 0;
 	int count = 0;
+	
+	int collide=0;
+	
 	Music chirp = new Music("chirp.wav", false);
 	public Chicken() {
 		img = getImage("crossy_road_chicken.png"); //load the image for Tree
@@ -141,7 +144,8 @@ public void TallTreeCollide(TallTree t) {
 		}
 			
 	}
-	public void CarCollide(Car c) {
+	public int CarCollide(Car c) {
+		
 		
 		//represent the 2 objects as Rectangles and check for intersection
 		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
@@ -154,9 +158,11 @@ public void TallTreeCollide(TallTree t) {
 			y=600;
 			c.collided();
 			System.out.println("car");
+			collide=0;
 		}
+		return collide;
 	}
-		public void CarCollide(CarRL c) {
+		public int CarCollide(CarRL c) {
 			
 			//represent the 2 objects as Rectangles and check for intersection
 			Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
@@ -169,10 +175,14 @@ public void TallTreeCollide(TallTree t) {
 				y=600;
 				c.collided();
 				System.out.println("car");
+				collide=1;
 			}
+			return collide;
 				
 			
 	}
+		
+
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {

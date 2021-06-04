@@ -61,7 +61,7 @@ public class CarRL {
 		vy=0;
 	}
 	public void carCrash2(CarRL c) {
-		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30); 
 		
 		//Represent Coin as a rectangle
 		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
