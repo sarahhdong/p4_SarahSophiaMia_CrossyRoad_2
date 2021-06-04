@@ -115,7 +115,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		if (cc1 ==1 || cc2 ==1 ||cc3 ==1 ||cc4 ==1 ||cc5 ==1 ||cc6 ==1 ||cc7 ==1) {
 			deadPage.paint(g);
-			System.out.println("collide");
+			deadPage.appear();
+			System.out.println("collide"); //only works for one car tho (second one in first row)
 			
 		}
 
@@ -264,7 +265,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		// final page button (space bar)
 		case 32:
-			// code to make final page go away
+			deadPage.disappear();
 		}
 
 		update();
