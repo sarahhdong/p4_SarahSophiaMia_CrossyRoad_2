@@ -158,7 +158,7 @@ public void TallTreeCollide(TallTree t) {
 			y=600;
 			c.collided();
 			System.out.println("car");
-			collide=0;
+			collide=1;
 		}
 		return collide;
 	}
