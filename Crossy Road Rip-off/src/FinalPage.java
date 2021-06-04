@@ -23,7 +23,10 @@ public class FinalPage {
 
 		//img2=  imgModified;
 		tx.scale(7.0, 7.0);
-		init(x, y);					//initialize the picture locationb
+		init(x, y);	
+		//this.x = x;
+		//this.y = y;
+		//initialize the picture locationb
 	}
 	
 	public void paint(Graphics g) {
@@ -39,6 +42,16 @@ public class FinalPage {
 		//if(time > 2000) visible = false;
 		
 	}   
+	public void appear() {
+		x = 350;
+		y=350;
+		init(x,y);
+	}
+	public void disappear() {
+		x=1000;
+		y=1000;
+		init(x,y);
+	}
 	
 	
 	private void init(double a, double b) {
