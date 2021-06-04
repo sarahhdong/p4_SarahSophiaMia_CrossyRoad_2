@@ -18,7 +18,7 @@ public class FinalPage {
 	public FinalPage() {
 		
 		
-		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
+		img2 = getImage("deadPage.png");///load the image based on the filename "ground.png"
 	//	Image imgModified = img2.getScaledInstance(700, 700, java.awt.Image.SCALE_SMOOTH);
 
 		//img2=  imgModified;
@@ -32,7 +32,7 @@ public class FinalPage {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		tx.setToTranslation(0,  0);
-		tx.scale(7.0, 7.0);
+		//tx.scale(7.0, 7.0);
 		
 		g2.drawImage(img2, tx, null);
 		//time += 17;
