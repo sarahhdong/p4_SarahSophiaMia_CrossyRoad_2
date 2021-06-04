@@ -17,29 +17,28 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.lang.Thread;
 
-
-
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	private int miss;
-	//Objects that need to be drawn on the JFrame in the paint method.
-	//1) write the code to create a Ground object as one of your instance variables welp
+	int collision = 0;
+	// Objects that need to be drawn on the JFrame in the paint method.
+	// 1) write the code to create a Ground object as one of your instance variables
+	// welp
 	Ground foreground = new Ground();
-	
+
 	int blah = 0;
-	
-	//2) try the same thing with the Tree class
-	Car car = new Car(0,400);
-	Car car1 = new Car(0,100);
-	Car car2 = new Car(320,0);
+
+	// 2) try the same thing with the Tree class
+	Car car = new Car(0, 400);
+	Car car1 = new Car(0, 100);
+	Car car2 = new Car(320, 0);
 //	Car car3 = new Car(500,0);
-	CarRL carRL = new CarRL(700,650);
-	CarRL carRL1 = new CarRL(700,350);
-	CarRL carRL2 = new CarRL(700,100);
-	CarRL carRL3 = new CarRL(700,50);
+	CarRL carRL = new CarRL(700, 650);
+	CarRL carRL1 = new CarRL(700, 350);
+	CarRL carRL2 = new CarRL(700, 100);
+	CarRL carRL3 = new CarRL(700, 50);
 	Chicken chick = new Chicken();
 	LandingPage landingPage = new LandingPage();
-	
-	
+	FinalPage deadPage = new FinalPage();
 
 	Coin c1 = new Coin();
 	Coin c2 = new Coin();
@@ -49,23 +48,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Coin c6 = new Coin();
 	Coin c7 = new Coin();
 	Coin c8 = new Coin();
-	
+
 	Tree t1 = new Tree(150, 10);
-	Tree t2 = new Tree(500,450);
-	Tree t3 = new Tree(300,370);
-	Tree t4 = new Tree(100,300);
-	
-	TallTree tt1 = new TallTree (500,350);
-	TallTree tt2 = new TallTree (350,100);
-	TallTree tt3 = new TallTree (70,500);
-	
-	//create a Music object for the sound-effects (names got mixed-up)
+	Tree t2 = new Tree(500, 450);
+	Tree t3 = new Tree(300, 370);
+	Tree t4 = new Tree(100, 300);
+
+	TallTree tt1 = new TallTree(500, 350);
+	TallTree tt2 = new TallTree(350, 100);
+	TallTree tt3 = new TallTree(70, 500);
+
+	// create a Music object for the sound-effects (names got mixed-up)
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
 
 	public void paint(Graphics g) {
-		//invoke the paint methods of the foreground and tree objects
-		super.paintComponent(g); //makes sure to refresh the jFrame properly
+		// invoke the paint methods of the foreground and tree objects
+		super.paintComponent(g); // makes sure to refresh the jFrame properly
+		
+		
 		foreground.paint(g);
 		carRL.paint(g);
 		carRL1.paint(g);
@@ -83,29 +84,48 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		c7.paint(g);
 		c8.paint(g);
 		chick.paint(g);
-		
+
 		t1.paint(g);
 		t2.paint(g);
 		t3.paint(g);
 		t4.paint(g);
-		
+
 		tt1.paint(g);
 		tt2.paint(g);
 		tt3.paint(g);
+
 		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 20);
 		g.setFont(font);
 		g.setColor(Color.white);
 
-		g.drawString(chick.getCollect()+"",650, 30);	    
-		
-		landingPage.paint(g);
+		g.drawString(chick.getCollect() + "", 650, 30);
 
+		
+
+		landingPage.paint(g);
+		
+		int cc1 = chick.CarCollide(car);
+		int cc2 = chick.CarCollide(car1);
+		int cc3 = chick.CarCollide(car2);
+		int cc4 = chick.CarCollide(carRL);
+		int cc5 = chick.CarCollide(carRL1);
+		int cc6 = chick.CarCollide(carRL2);
+		int cc7 = chick.CarCollide(carRL3);
+		
+		
+		if (cc1 ==1 || cc2 ==1 ||cc3 ==1 ||cc4 ==1 ||cc5 ==1 ||cc6 ==1 ||cc7 ==1) {
+			deadPage.paint(g);
+			System.out.println("collide");
+			
+		}
+
+		
 	}
 
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 	}
-	
+
 	public Frame() {
 		JFrame f = new JFrame("Duck Hunt");
 		f.setSize(new Dimension(700, 700));
@@ -114,17 +134,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.addMouseListener(this);
 		f.addKeyListener(this);
 		f.setResizable(false);
-		
+
 		Timer t = new Timer(16, this);
-	
+
 		t.start();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 	}
-	
 
 	public void update() {
-		//ask the ball to check for collisions
+		// ask the ball to check for collisions
+		
+		
 		chick.CoinCollide(c1);
 		chick.CoinCollide(c2);
 		chick.CoinCollide(c3);
@@ -133,6 +154,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CoinCollide(c6);
 		chick.CoinCollide(c7);
 		chick.CoinCollide(c8);
+
 		chick.CarCollide(car);
 		chick.CarCollide(car1);
 		chick.CarCollide(car2);
@@ -141,67 +163,74 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CarCollide(carRL2);
 		chick.CarCollide(carRL3);
 		
+
 		chick.TreeCollide(t1);
 		chick.TreeCollide(t2);
 		chick.TreeCollide(t3);
 		chick.TreeCollide(t4);
-		
+
 		chick.TallTreeCollide(tt1);
 		chick.TallTreeCollide(tt2);
 		chick.TallTreeCollide(tt3);
-		 
+
 		car.carCrash(car1);
-        car1.carCrash(car);
-        car2.carCrash(car);
-        car.carCrash(car2);
-        car1.carCrash(car2);
-        car2.carCrash(car1);
-        carRL.carCrash2(carRL1);
-        carRL.carCrash2(carRL2);
-        carRL.carCrash2(carRL3);
-        carRL1.carCrash2(carRL);
-        carRL2.carCrash2(carRL);
-        carRL3.carCrash2(carRL);
-        carRL1.carCrash2(carRL2);
-        carRL1.carCrash2(carRL3);
-        carRL2.carCrash2(carRL1);
-        carRL3.carCrash2(carRL1);
-        carRL2.carCrash2(carRL3);
-        carRL3.carCrash2(carRL2);
+		car1.carCrash(car);
+		car2.carCrash(car);
+		car.carCrash(car2);
+		car1.carCrash(car2);
+		car2.carCrash(car1);
+		carRL.carCrash2(carRL1);
+		carRL.carCrash2(carRL2);
+		carRL.carCrash2(carRL3);
+		carRL1.carCrash2(carRL);
+		carRL2.carCrash2(carRL);
+		carRL3.carCrash2(carRL);
+		carRL1.carCrash2(carRL2);
+		carRL1.carCrash2(carRL3);
+		carRL2.carCrash2(carRL1);
+		carRL3.carCrash2(carRL1);
+		carRL2.carCrash2(carRL3);
+		carRL3.carCrash2(carRL2);
 
 	}
 	
-	/*scale pictures
-	 * tx.scale(2,2);
+	
+
+	/*
+	 * scale pictures tx.scale(2,2);
 	 * 
 	 */
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+
+		int x = arg0.getX();
+		int y = arg0.getY();
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -215,28 +244,31 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyCode());
-		
-		
-		switch(arg0.getKeyCode()) {
-		
-			//forward
+
+		switch (arg0.getKeyCode()) {
+
+		// forward
 		case 38:
 			chick.jump();
 			break;
-			
-			//right
+
+		// right
 		case 39:
 			chick.right();
 			break;
-			
-			//left
+
+		// left
 		case 37:
 			chick.left();
 			break;
+
+		// final page button (space bar)
+		case 32:
+			// code to make final page go away
 		}
-		
+
 		update();
-		
+
 	}
 
 	@Override
@@ -248,6 +280,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
