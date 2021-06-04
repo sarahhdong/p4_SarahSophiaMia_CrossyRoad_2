@@ -104,13 +104,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		landingPage.paint(g);
 		
-		if (true) {
+		int cc1 = chick.CarCollide(car);
+		int cc2 = chick.CarCollide(car1);
+		int cc3 = chick.CarCollide(car2);
+		int cc4 = chick.CarCollide(carRL);
+		int cc5 = chick.CarCollide(carRL1);
+		int cc6 = chick.CarCollide(carRL2);
+		int cc7 = chick.CarCollide(carRL3);
+		
+		
+		if (cc1 ==1 || cc2 ==1 ||cc3 ==1 ||cc4 ==1 ||cc5 ==1 ||cc6 ==1 ||cc7 ==1) {
 			deadPage.paint(g);
 			System.out.println("collide");
 			
 		}
 
-		// deadPage.paint(g);
+		
 	}
 
 	public static void main(String[] arg) {
