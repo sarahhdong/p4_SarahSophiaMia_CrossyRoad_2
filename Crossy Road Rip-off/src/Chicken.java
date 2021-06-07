@@ -3,6 +3,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
@@ -160,6 +161,7 @@ public void TallTreeCollide(TallTree t) {
 			System.out.println("car");
 			collide=1;
 		}
+		//else{collide=0;}
 		return collide;
 	}
 		public int CarCollide(CarRL c) {
@@ -177,6 +179,7 @@ public void TallTreeCollide(TallTree t) {
 				System.out.println("car");
 				collide=1;
 			}
+			//else{collide=0;}
 			return collide;
 				
 			
@@ -212,6 +215,26 @@ public void TallTreeCollide(TallTree t) {
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println(arg0.getKeyCode());
+
+		switch (arg0.getKeyCode()) {
+
+		
+
+		// final page button (space bar)
+		case 32:
+			
+			collide=0;
+			System.out.println("hi");
+			break;
+		}
+
+		
+
 	}
 
 

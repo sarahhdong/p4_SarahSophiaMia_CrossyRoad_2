@@ -67,14 +67,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		super.paintComponent(g); // makes sure to refresh the jFrame properly
 		
 		
+
+		
 		foreground.paint(g);
-		carRL.paint(g);
-		carRL1.paint(g);
-		carRL2.paint(g);
-		carRL3.paint(g);
-		car.paint(g);
-		car1.paint(g);
-		car2.paint(g);
+		
 		c1.paint(g);
 		c2.paint(g);
 		c3.paint(g);
@@ -83,6 +79,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		c6.paint(g);
 		c7.paint(g);
 		c8.paint(g);
+		
+		carRL.paint(g);
+		carRL1.paint(g);
+		carRL2.paint(g);
+		carRL3.paint(g);
+		car.paint(g);
+		car1.paint(g);
+		car2.paint(g);
+
 		chick.paint(g);
 
 		t1.paint(g);
@@ -116,7 +121,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if (cc1 ==1 || cc2 ==1 ||cc3 ==1 ||cc4 ==1 ||cc5 ==1 ||cc6 ==1 ||cc7 ==1) {
 			deadPage.paint(g);
 			deadPage.appear();
-			System.out.println("collide"); //only works for one car tho (second one in first row)
+			//System.out.println("collide"); 
 			
 		}
 
@@ -265,7 +270,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		// final page button (space bar)
 		case 32:
+			
 			deadPage.disappear();
+			break;
 		}
 
 		update();
