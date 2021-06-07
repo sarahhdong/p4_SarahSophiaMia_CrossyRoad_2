@@ -6,13 +6,13 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class CarRL {
+public class CarRL3 {
 	private int x, y;
 	private double vx, vy;
 	private Image img; 
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
-	public CarRL(int x, int y) {
+	public CarRL3(int x, int y) {
 		if(Math.random() <.25) { img = getImage("YellowBackwardCar.png");}
 		else if(Math.random() <.50) { img = getImage("GreenBackwardCar.png");}
 		else if(Math.random() <.75) { img = getImage("PurpleBackwardCar.png");}
@@ -30,25 +30,15 @@ public class CarRL {
 		y += vy;
 
 		if(x<=0) {
-//			if(y<=200) {
-//				x = 700;
-//				y = 100;
-//				init(x,y);
-//			}
-//			if(y<=100&&y>50) {
-//				x = 700;
-//				y = 100;
-//				init(x,y);
-//			}
 
 				x = 700;
-				y = 650;
+				y = 100;
+				init(x,y);
 				if(Math.random() <.25) { img = getImage("YellowBackwardCar.png");}
 				else if(Math.random() <.50) { img = getImage("GreenBackwardCar.png");}
 				else if(Math.random() <.75) { img = getImage("PurpleBackwardCar.png");}
 				else {img = getImage("RedBackwardCar.png");}
-				init(x,y);
-
+				
 
 		}
 
@@ -88,7 +78,7 @@ public class CarRL {
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = CarRL.class.getResource(path);
+			URL imageURL = CarRL3.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();

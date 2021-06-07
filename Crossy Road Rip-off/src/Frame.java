@@ -33,8 +33,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Car car2 = new Car(320, 0);
 //	Car car3 = new Car(500,0);
 	CarRL carRL = new CarRL(700, 650);
-	CarRL carRL1 = new CarRL(700, 350);
-	CarRL carRL2 = new CarRL(700, 100);
+	CarRL2 carRL1 = new CarRL2(700, 350);
+	CarRL3 carRL2 = new CarRL3(700, 100);
 	CarRL carRL3 = new CarRL(700, 50);
 	Chicken chick = new Chicken();
 	LandingPage landingPage = new LandingPage();
@@ -158,8 +158,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CarCollide(car1);
 		chick.CarCollide(car2);
 		chick.CarCollide(carRL);
-		chick.CarCollide(carRL1);
-		chick.CarCollide(carRL2);
+		//chick.CarCollide(carRL1);
+		//chick.CarCollide(carRL2);
 		chick.CarCollide(carRL3);
 		
 
@@ -171,25 +171,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.TallTreeCollide(tt1);
 		chick.TallTreeCollide(tt2);
 		chick.TallTreeCollide(tt3);
-
-		car.carCrash(car1);
-		car1.carCrash(car);
-		car2.carCrash(car);
-		car.carCrash(car2);
-		car1.carCrash(car2);
-		car2.carCrash(car1);
-		carRL.carCrash2(carRL1);
-		carRL.carCrash2(carRL2);
-		carRL.carCrash2(carRL3);
-		carRL1.carCrash2(carRL);
-		carRL2.carCrash2(carRL);
-		carRL3.carCrash2(carRL);
-		carRL1.carCrash2(carRL2);
-		carRL1.carCrash2(carRL3);
-		carRL2.carCrash2(carRL1);
-		carRL3.carCrash2(carRL1);
-		carRL2.carCrash2(carRL3);
-		carRL3.carCrash2(carRL2);
 
 	}
 	
