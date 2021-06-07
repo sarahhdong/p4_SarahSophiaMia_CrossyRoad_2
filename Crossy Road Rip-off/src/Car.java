@@ -35,16 +35,28 @@ public class Car {
 				x = 320;
 				y = 0;
 				init(x,y);
+				if(Math.random() <.25) { img = getImage("CarNew.png");}
+				else if(Math.random() <.50) { img = getImage("greencar.png");}
+				else if(Math.random() <.75) { img = getImage("purplecar.png");}
+				else {img = getImage("redcar.png");}
 			}
 			if(y>100&&y<=450) {//middle car
 				x = 0;
 				y = 100;
 				init(x,y);
+				if(Math.random() <.25) { img = getImage("CarNew.png");}
+				else if(Math.random() <.50) { img = getImage("greencar.png");}
+				else if(Math.random() <.75) { img = getImage("purplecar.png");}
+				else {img = getImage("redcar.png");}
 			}
 			if(y>500) {//bottom car
 				x = 0;
 				y = 400;
 				init(x,y);
+				if(Math.random() <.25) { img = getImage("CarNew.png");}
+				else if(Math.random() <.50) { img = getImage("greencar.png");}
+				else if(Math.random() <.75) { img = getImage("purplecar.png");}
+				else {img = getImage("redcar.png");}
 			}
 		}
 
