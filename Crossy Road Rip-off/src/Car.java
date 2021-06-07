@@ -70,24 +70,6 @@ public class Car {
 		
 	}
 	
-	public void collided() {
-		vx=0;
-		vy=0;
-	}
-	
-	public void carCrash(Car c) {
-		Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
-		
-		//Represent Coin as a rectangle
-		Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
-		
-		if(r1.intersects(r2)) {
-			vx=0;
-			vy=0;
-			c.collided();
-			System.out.println("crash");
-		}
-	}
 	
 	public int getY() {
 		// TODO Auto-generated method stub
