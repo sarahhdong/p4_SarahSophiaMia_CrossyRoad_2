@@ -17,8 +17,12 @@ public class Chicken implements MouseListener{
 	int collect = 0;
 	int count = 0;
 	boolean dead = false;
+	boolean win = false;
 	
 	int collide=0;
+	
+	WinPage winPage = new WinPage();
+
 	
 	Music chirp = new Music("chirp.wav", false);
 	public Chicken() {
@@ -32,6 +36,8 @@ public class Chicken implements MouseListener{
 		x += vx;
 		y += vy;
 		if(y<0) {
+			win = true;
+			
 			x=150;
 			y=600;
 			init(x, y); 
