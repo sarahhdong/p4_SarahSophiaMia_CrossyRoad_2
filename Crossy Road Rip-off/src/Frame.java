@@ -39,6 +39,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Chicken chick = new Chicken();
 	LandingPage landingPage = new LandingPage();
 	FinalPage deadPage = new FinalPage();
+	WinPage winPage = new WinPage();
 
 	Coin c1 = new Coin();
 	Coin c2 = new Coin();
@@ -88,7 +89,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car1.paint(g);
 		car2.paint(g);
 
-		chick.paint(g);
+		
 
 		t1.paint(g);
 		t2.paint(g);
@@ -98,6 +99,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		tt1.paint(g);
 		tt2.paint(g);
 		tt3.paint(g);
+		
+		chick.paint(g);
 
 		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 20);
 		g.setFont(font);
@@ -111,11 +114,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		
-		if (chick.dead/*cc1 ==1 || cc2 ==1 ||cc3 ==1 ||cc4 ==1 ||cc5 ==1 ||cc6 ==1 ||cc7 ==1*/) {
+		if (chick.dead) {
 			deadPage.paint(g);
 			deadPage.appear();
-			//System.out.println("collide"); 
+		
 			
+		}
+		if(chick.win) {
+			winPage.paint(g);
+			winPage.appear();
 		}
 
 		
@@ -247,6 +254,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			chick.dead = false;
 			if(!chick.dead) {
 				deadPage.disappear();
+			}
+			chick.win =false;
+			if(!chick.win) {
+				winPage.disappear();
 			}
 			break;
 		}
