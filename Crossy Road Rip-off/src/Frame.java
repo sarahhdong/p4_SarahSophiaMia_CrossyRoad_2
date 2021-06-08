@@ -165,8 +165,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CarCollide(car1);
 		chick.CarCollide(car2);
 		chick.CarCollide(carRL);
-		//chick.CarCollide(carRL1);
-		//chick.CarCollide(carRL2);
+		chick.CarCollide(carRL1);
+		chick.CarCollide(carRL2);
 		chick.CarCollide(carRL3);
 		
 

@@ -182,11 +182,43 @@ public void TallTreeCollide(TallTree t) {
 				System.out.println("car");
 				dead = true;
 			}
+			
 
 			
 	}
+		public void CarCollide(CarRL2 c) {
+			
+			//represent the 2 objects as Rectangles and check for intersection
+			Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+			
+			//Represent Coin as a rectangle
+			Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
+			
+			if(r1.intersects(r2)) {
+				x=150;
+				y=600;
+				System.out.println("car");
+				dead = true;
+			}
 		
-
+		}
+		public void CarCollide(CarRL3 c) {
+			
+			//represent the 2 objects as Rectangles and check for intersection
+			Rectangle r1 = new Rectangle(this.x+20, this.y+20, 25, 30);
+			
+			//Represent Coin as a rectangle
+			Rectangle r2 = new Rectangle(c.getX()+10, c.getY()+10, 30, 30);
+			
+			if(r1.intersects(r2)) {
+				x=150;
+				y=600;
+				System.out.println("car");
+				dead = true;
+			}
+		
+		}
+	
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
