@@ -75,6 +75,12 @@ public class Coin {
 			y = 1000;
 		}
 		
+		public void reset() {
+			x = (int)(Math.random() * 680)+10;
+			y = (int)(Math.random() * 680)+10;
+		}
+		
+		
 		public int getY() {
 			// TODO Auto-generated method stub
 			return y;

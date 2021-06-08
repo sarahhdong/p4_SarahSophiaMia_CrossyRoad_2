@@ -25,7 +25,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	// welp
 	Ground foreground = new Ground();
 
-	int blah = 0;
+	int counter = 0;
 
 	// 2) try the same thing with the Tree class
 	Car car = new Car(0, 400);
@@ -115,12 +115,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		if (chick.dead) {
+			
 			deadPage.paint(g);
 			deadPage.appear();
+			
 		
 			
 		}
 		if(chick.win) {
+			
 			winPage.paint(g);
 			winPage.appear();
 		}
@@ -251,13 +254,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		// final page button (space bar)
 		case 32:
+			
 			chick.dead = false;
 			if(!chick.dead) {
 				deadPage.disappear();
+				chick.setCollect();
+				c1.reset();
+				c2.reset();
+				c3.reset();
+				c4.reset();
+				c5.reset();
+				c6.reset();
+				c7.reset();
+				c8.reset();
+				
 			}
 			chick.win =false;
 			if(!chick.win) {
 				winPage.disappear();
+				chick.setCollect();
+				c1.reset();
+				c2.reset();
+				c3.reset();
+				c4.reset();
+				c5.reset();
+				c6.reset();
+				c7.reset();
+				c8.reset();
+				
 			}
 			break;
 		}

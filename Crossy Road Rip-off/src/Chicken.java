@@ -279,6 +279,10 @@ public void TallTreeCollide(TallTree t) {
 		// TODO Auto-generated method stub
 		return collect;
 	}
+	
+	public void setCollect() {
+		collect = 0;
+	}
 
 
 	public int getX() {
