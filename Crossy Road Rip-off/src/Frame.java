@@ -40,16 +40,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	LandingPage landingPage = new LandingPage();
 	FinalPage deadPage = new FinalPage();
 	WinPage winPage = new WinPage();
+	
+	Coin[] coins = new Coin[8];
 
-	Coin c1 = new Coin();
-	Coin c2 = new Coin();
-	Coin c3 = new Coin();
-	Coin c4 = new Coin();
-	Coin c5 = new Coin();
-	Coin c6 = new Coin();
-	Coin c7 = new Coin();
-	Coin c8 = new Coin();
 
+	
 	Tree t1 = new Tree(150, 10);
 	Tree t2 = new Tree(500, 450);
 	Tree t3 = new Tree(300, 370);
@@ -72,14 +67,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		foreground.paint(g);
 		
-		c1.paint(g);
-		c2.paint(g);
-		c3.paint(g);
-		c4.paint(g);
-		c5.paint(g);
-		c6.paint(g);
-		c7.paint(g);
-		c8.paint(g);
+		for (int i = 0; i<coins.length; i++) {
+			coins[i].paint(g);
+		}
 		
 		carRL.paint(g);
 		carRL1.paint(g);
@@ -143,18 +133,26 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.addMouseListener(this);
 		f.addKeyListener(this);
 		f.setResizable(false);
-
+		
+		for (int i = 0; i<coins.length; i++) {
+			coins[i] = new Coin();
+		}
+		
 		Timer t = new Timer(16, this);
 
-		t.start();
+		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
+		
+		t.start();
 	}
 
 	public void update() {
 		// ask the ball to check for collisions
-		
-		
+		for(int i = 0; i<coins.length; i++) {
+			chick.CoinCollide(coins[i]);
+		}
+		/*
 		chick.CoinCollide(c1);
 		chick.CoinCollide(c2);
 		chick.CoinCollide(c3);
@@ -163,6 +161,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		chick.CoinCollide(c6);
 		chick.CoinCollide(c7);
 		chick.CoinCollide(c8);
+		*/
 
 		chick.CarCollide(car);
 		chick.CarCollide(car1);
@@ -259,28 +258,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(!chick.dead) {
 				deadPage.disappear();
 				chick.setCollect();
-				c1.reset();
-				c2.reset();
-				c3.reset();
-				c4.reset();
-				c5.reset();
-				c6.reset();
-				c7.reset();
-				c8.reset();
+				for(int i = 0; i<coins.length; i++) {
+					coins[i].reset();
+				}
+
 				
 			}
 			chick.win =false;
 			if(!chick.win) {
 				winPage.disappear();
 				chick.setCollect();
-				c1.reset();
-				c2.reset();
-				c3.reset();
-				c4.reset();
-				c5.reset();
-				c6.reset();
-				c7.reset();
-				c8.reset();
+				for(int i = 0; i<coins.length; i++) {
+					coins[i].reset();
+				}
 				
 			}
 			break;
