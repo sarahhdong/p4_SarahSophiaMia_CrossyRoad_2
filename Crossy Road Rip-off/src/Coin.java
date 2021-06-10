@@ -12,7 +12,7 @@ public class Coin {
 		// TODO Auto-generated method stub
 		private int x, y;
 		private double vx, vy;
-		private Image img; // image of the frog
+		private Image img; 
 		private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 		
 		Music coin = new Music("coin.wav", false);
@@ -21,18 +21,11 @@ public class Coin {
 			img = getImage("newCoin.png");
 			x = (int)(Math.random() * 680)+10;
 			y = (int)(Math.random() * 680)+10;
-			//initialize the location of the image
-			//this.x = x;
-			//this.y = y;
-			//vx = -5;
-			//vy = vx+3;
-			
+		
 		}
 		
-		public void paint(Graphics g) {//hope this works
-			//x += vx;
-			//y += vy;
-
+		public void paint(Graphics g) {
+		
 			if(x<=0) {
 				if(y<=400) {//BOTTOM car
 					x = 700;
@@ -40,11 +33,10 @@ public class Coin {
 					init(x,y);
 				}
 				
-				
 			}
 
 			tx.setToTranslation(x, y);
-			//tx.scale(1.5, 1.5);
+		
 			tx.scale(.75, .75);
 			
 			//these are the 2 lines of code needed draw an image on the screen

@@ -23,7 +23,7 @@ public class Ground {
 		
 		
 
-		init(x, y);					//initialize the picture locationb
+		init(x, y);					//initialize the picture location
 	}
 	public void paint(Graphics g) {
 		//using a Graphics2D to draw images

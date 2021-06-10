@@ -67,9 +67,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		// invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); // makes sure to refresh the jFrame properly
 		
-		
-
-		
 		foreground.paint(g);
 		
 		c1.paint(g);
@@ -89,7 +86,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car1.paint(g);
 		car2.paint(g);
 
-		
 
 		t1.paint(g);
 		t2.paint(g);
@@ -107,7 +103,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.white);
 
 		g.drawString(chick.getCollect() + "", 650, 30);
-
 		
 
 		landingPage.paint(g);
@@ -185,11 +180,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	
-
-	/*
-	 * scale pictures tx.scale(2,2);
-	 * 
-	 */
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
