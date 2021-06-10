@@ -7,7 +7,7 @@ import java.net.URL;
 public class TallTree {
 	private int x, y;
 	private double vx, vy;
-	private Image img; // image of the frog
+	private Image img; 
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	
 	public TallTree(int x, int y) {
@@ -17,13 +17,11 @@ public class TallTree {
 		this.x = x;
 		this.y = y;
 		
-		
-		//x = setX;
-		//y = setY;
+
 		 
 	}
 	
-	public void paint(Graphics g) {//hope this works
+	public void paint(Graphics g) {
 	
 
 		if(x<=0) {
@@ -33,11 +31,9 @@ public class TallTree {
 				init(x,y);
 			}
 			
-			
 		}
 
 		tx.setToTranslation(x, y);
-		//tx.scale(1.5, 1.5);
 		tx.scale(.75, .75);
 		
 		//these are the 2 lines of code needed draw an image on the screen

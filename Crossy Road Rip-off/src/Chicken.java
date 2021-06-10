@@ -265,7 +265,6 @@ public void TallTreeCollide(TallTree t) {
 			System.out.println("hi");
 			break;
 		}
-
 		
 
 	}
