@@ -17,12 +17,11 @@ public class LandingPage {
 		//big roads
 		
 		
-		img2 = getImage("crossylandingpage.gif");///load the image based on the filename "ground.png"
-	//	Image imgModified = img2.getScaledInstance(700, 700, java.awt.Image.SCALE_SMOOTH);
+		img2 = getImage("crossylandingpage.gif");//load the image based on the filename "ground.png"
+	
 
-		//img2=  imgModified;
 		tx.scale(7.0, 7.0);
-		init(x, y);					//initialize the picture locationb
+		init(x, y);					//initialize the picture location
 	}
 	
 	public void paint(Graphics g) {

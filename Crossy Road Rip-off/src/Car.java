@@ -25,7 +25,7 @@ public class Car {
 		vy = vx-2.5;
 	}
 	
-	public void paint(Graphics g) {//hope this works
+	public void paint(Graphics g) {
 		x += vx;
 		y += vy;
 
