@@ -18,16 +18,11 @@ import javax.swing.Timer;
 import java.lang.Thread;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
-
-
 	// Objects that need to be drawn on the JFrame in the paint method.
-	
 	// 1) write the code to create a Ground object as one of your instance variables
 	Ground foreground = new Ground();
-
 	int counter = 0;
-
-	// 2) try the same thing with the Tree class
+	//cars
 	Car car = new Car(0, 400);
 	Car car1 = new Car(0, 100);
 	Car car2 = new Car(320, 0);
@@ -35,38 +30,35 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	CarRL2 carRL1 = new CarRL2(700, 350);
 	CarRL3 carRL2 = new CarRL3(700, 100);
 	CarRL carRL3 = new CarRL(700, 50);
+	//chicken
 	Chicken chick = new Chicken();
+	//pages
 	LandingPage landingPage = new LandingPage();
 	FinalPage deadPage = new FinalPage();
 	WinPage winPage = new WinPage();
-	
+	//coins
 	Coin[] coins = new Coin[8];
-
-
-	
+	//trees
 	Tree t1 = new Tree(150, 10);
 	Tree t2 = new Tree(500, 450);
 	Tree t3 = new Tree(300, 370);
 	Tree t4 = new Tree(100, 300);
-
 	TallTree tt1 = new TallTree(500, 350);
 	TallTree tt2 = new TallTree(350, 100);
 	TallTree tt3 = new TallTree(70, 500);
 
-	// create a Music object for the sound-effects (names got mixed-up)
+	// create a Music object for the sound-effects 
 	Music chirp = new Music("chirp.wav", false);
 	Music coin = new Music("coin.wav", false);
 
 	public void paint(Graphics g) {
 		// invoke the paint methods of the foreground and tree objects
 		super.paintComponent(g); // makes sure to refresh the jFrame properly
-		
 		foreground.paint(g);
-		
 		for (int i = 0; i<coins.length; i++) {
 			coins[i].paint(g);
 		}
-		
+		//cars
 		carRL.paint(g);
 		carRL1.paint(g);
 		carRL2.paint(g);
@@ -74,45 +66,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		car.paint(g);
 		car1.paint(g);
 		car2.paint(g);
-
-
+		//trees
 		t1.paint(g);
 		t2.paint(g);
 		t3.paint(g);
 		t4.paint(g);
-
 		tt1.paint(g);
 		tt2.paint(g);
 		tt3.paint(g);
-		
+		//chicken
 		chick.paint(g);
-
+		//coin collection counter
 		Font font = new Font(Font.SANS_SERIF, Font.BOLD, 20);
 		g.setFont(font);
 		g.setColor(Color.white);
-
 		g.drawString(chick.getCollect() + "", 650, 30);
-		
-
+		//landing page
 		landingPage.paint(g);
-		
-		
-		
+		//paint dead page if chick dies
 		if (chick.dead) {
-			
 			deadPage.paint(g);
-			deadPage.appear();
-			
-		
-			
+			deadPage.appear();	
 		}
-		if(chick.win) {
-			
+		//paint win page if chick wins
+		if(chick.win) {			
 			winPage.paint(g);
 			winPage.appear();
 		}
 
-		
 	}
 
 	public static void main(String[] arg) {
@@ -127,17 +108,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.addMouseListener(this);
 		f.addKeyListener(this);
 		f.setResizable(false);
-		
 		for (int i = 0; i<coins.length; i++) {
 			coins[i] = new Coin();
 		}
-		
 		Timer t = new Timer(16, this);
-
-		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
-		
 		t.start();
 	}
 
@@ -146,16 +122,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(int i = 0; i<coins.length; i++) {
 			chick.CoinCollide(coins[i]);
 		}
-		/*
-		chick.CoinCollide(c1);
-		chick.CoinCollide(c2);
-		chick.CoinCollide(c3);
-		chick.CoinCollide(c4);
-		chick.CoinCollide(c5);
-		chick.CoinCollide(c6);
-		chick.CoinCollide(c7);
-		chick.CoinCollide(c8);
-		*/
 
 		chick.CarCollide(car);
 		chick.CarCollide(car1);
@@ -200,9 +166,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 
-		int x = arg0.getX();
-		int y = arg0.getY();
-
 	}
 
 	@Override
@@ -242,17 +205,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		// final page button (space bar)
 		case 32:
-			
+			//dead condition
 			chick.dead = false;
 			if(!chick.dead) {
 				deadPage.disappear();
 				chick.setCollect();
 				for(int i = 0; i<coins.length; i++) {
 					coins[i].reset();
-				}
-
-				
+				}	
 			}
+			//won condition 
 			chick.win =false;
 			if(!chick.win) {
 				winPage.disappear();
@@ -260,11 +222,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				for(int i = 0; i<coins.length; i++) {
 					coins[i].reset();
 				}
-				
 			}
 			break;
 		}
-
 		update();
 
 	}

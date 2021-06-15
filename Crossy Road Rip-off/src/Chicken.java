@@ -116,7 +116,6 @@ public class Chicken implements MouseListener{
 		Rectangle r2 = new Rectangle(t.getX()+10, t.getY()+10, 30, 40);
 		
 		if(r1.intersects(r2)) {
-			x=this.x;
 			y=t.getY()+50;
 			System.out.println("tree");
 		}
