@@ -8,18 +8,12 @@ import java.net.URL;
 public class Ground {
 	private int x = 0,y = 0;
 	private Image img; // image of the frog
-	private Image img2;
-	private Image img3;
-	private Image coin;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Ground() {
 		//big roads
 		
 		img = getImage("evenRoads.png");
-
-		img3 = getImage("Tree(short).png");
-		coin = getImage("coin.png");
 		
 		
 

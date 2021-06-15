@@ -18,11 +18,11 @@ import javax.swing.Timer;
 import java.lang.Thread;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
-	private int miss;
-	int collision = 0;
+
+
 	// Objects that need to be drawn on the JFrame in the paint method.
+	
 	// 1) write the code to create a Ground object as one of your instance variables
-	// welp
 	Ground foreground = new Ground();
 
 	int counter = 0;
@@ -31,7 +31,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Car car = new Car(0, 400);
 	Car car1 = new Car(0, 100);
 	Car car2 = new Car(320, 0);
-//	Car car3 = new Car(500,0);
 	CarRL carRL = new CarRL(700, 650);
 	CarRL2 carRL1 = new CarRL2(700, 350);
 	CarRL3 carRL2 = new CarRL3(700, 100);
